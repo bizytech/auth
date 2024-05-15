@@ -3,11 +3,11 @@
 @section('content')
     <div class="">
         @include("bizytech::".config('nisimpo_auth.theme').".users.add_user_modal")
-        <div class="row align-item-center">
-            <div class="col-sm-6">
-                <h1 class="p-0 m-0">Users</h1>
+        <div class="row">
+            <div class="col">
+                <h1>Users</h1>
             </div>
-            <div class="col-sm-6">
+            <div class="col">
                 <button class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#userModal">Add User</button>
             </div>
         </div>

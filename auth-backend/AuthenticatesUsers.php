@@ -21,7 +21,7 @@ trait AuthenticatesUsers
     {
         if(\Illuminate\Support\Facades\Route::has('auth.login'))
             return view('auth.login');
-        return view('nisimpo::auth.login');
+        return view('bizytech::auth.login');
     }
 
     /**
