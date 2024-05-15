@@ -29,9 +29,8 @@ class UiCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function handle()
     {
@@ -55,7 +54,7 @@ class UiCommand extends Command
      *
      * @return void
      */
-    protected function bootstrap()
+    protected function bootstrap(): void
     {
         Presets\Bootstrap::install();
 
@@ -68,7 +67,7 @@ class UiCommand extends Command
      *
      * @return void
      */
-    protected function vue()
+    protected function vue(): void
     {
         Presets\Bootstrap::install();
         Presets\Vue::install();
@@ -82,7 +81,7 @@ class UiCommand extends Command
      *
      * @return void
      */
-    protected function react()
+    protected function react(): void
     {
         Presets\Bootstrap::install();
         Presets\React::install();

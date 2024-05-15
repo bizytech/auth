@@ -69,7 +69,7 @@ class AuthCommand extends Command
         }
         $this->exportSeeder();
         $this->call("vendor:publish",[
-            '--tag' => 'nisimpo',
+            '--tag' => 'bizytech',
             '--force' => true,
         ]);
         $this->components->info('Authentication scaffolding generated successfully.');

@@ -37,7 +37,7 @@ class AuthUIServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Route::mixin(new AuthRouteMethods);
-        $this->loadViewsFrom(__DIR__.'/../resources/views','nisimpo');
+        $this->loadViewsFrom(__DIR__.'/../resources/views','bizytech');
         $this->registerRoutes();
 
         /*        $this->publishes([
@@ -66,7 +66,7 @@ class AuthUIServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../database/seeders/' => database_path('seeders')
-        ], 'seeders');
+        ], 'bizytech-seeders');
     }
 
     private function publishAll(): void
@@ -77,6 +77,6 @@ class AuthUIServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views/common' => base_path('resources/views/commons'),
             __DIR__.'/../config' => base_path('config'),
            // __DIR__.'/../database/seeders/' => database_path('seeders'),
-        ], 'nisimpo');
+        ], 'bizytech');
     }
 }

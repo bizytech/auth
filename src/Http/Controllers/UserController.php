@@ -20,15 +20,14 @@ use Spatie\Permission\Models\Role;
 class UserController extends Controller
 {
     use AuthorizeUserTrait;
-
     /**
      * Create a new controller instance.
      *
      * @return void
      */
 
-     public function __construct(protected AuthorizationService $authorizationService,
-        protected UserManagementService $userManagementService) {
+    public function __construct(protected AuthorizationService $authorizationService,
+                                protected UserManagementService $userManagementService) {
         $this->middleware('auth');
     }
 
@@ -42,22 +41,22 @@ class UserController extends Controller
 
     public function edit(string $id)
     {
-       $user = $this->userManagementService->findUser($id);
-       return $user;
+        $user = $this->userManagementService->findUser($id);
+        return $user;
     }
 
 
     public function delete($id)
     {
-      try{
-        $user = $this->userManagementService->deleteUser($id);
-        if ($user){
-            return $this->successResponse();
+        try{
+            $user = $this->userManagementService->deleteUser($id);
+            if ($user){
+                return $this->successResponse();
+            }
+        }catch(\Exception $exception){
+            return $this->failedResponse($exception);
         }
-      }catch(\Exception $exception){
-        return $this->failedResponse($exception);
-      }
-      return null;
+        return null;
     }
 
 
@@ -90,10 +89,11 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userManagementService->findAllUsers();
-        if (\request()->ajax()){
+        if (request()->ajax()){
             return  $this->userManagementService->usersDatatable();
         }
-        return view('nisimpo::users.index', compact('users'));
+        $view = config('bizy_auth.theme').'.users.index';
+        return view('nisimpo::'.$view, compact('users'));
     }
 
 
@@ -103,7 +103,8 @@ class UserController extends Controller
         if (\request()->ajax()){
             return  $this->userManagementService->rolesDatatable();
         }
-        return view('nisimpo::roles.index', compact('roles'));
+        $view = 'nisimpo::'.config('bizy_auth.theme').'.roles.index';
+        return view($view, compact('roles'));
     }
 
 
@@ -151,10 +152,10 @@ class UserController extends Controller
             if ($role){
                 return $this->successResponse();
             }
-          }catch(\Exception $exception){
+        }catch(\Exception $exception){
             return $this->failedResponse($exception);
-          }
-          return null;
+        }
+        return null;
     }
 
 
@@ -164,10 +165,10 @@ class UserController extends Controller
             if ($role){
                 return $this->successResponse();
             }
-          }catch(\Exception $exception){
+        }catch(\Exception $exception){
             return $this->failedResponse($exception);
-          }
-          return null;
+        }
+        return null;
     }
 
     public function editRole($id) {
@@ -226,7 +227,7 @@ class UserController extends Controller
             if ($data["isChecked"]  === true){
                 $this->authorizationService->assignDirectPermissionToUser($user, $permission);
             }else{
-              $this->authorizationService->revokePermissionFromUser($user, $permission);
+                $this->authorizationService->revokePermissionFromUser($user, $permission);
             }
         }
         return $this->successResponse();

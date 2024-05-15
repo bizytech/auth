@@ -2,15 +2,16 @@
 
 namespace BizyTech\Auth;
 
+use Closure;
+
 class AuthRouteMethods
 {
     /**
      * Register the typical authentication routes for an application.
      *
-     * @param  array  $options
      * @return callable
      */
-    public function auth()
+    public function auth(): callable
     {
         return function ($options = []) {
             $namespace = class_exists($this->prependGroupNamespace('Auth\LoginController')) ? null : 'App\Http\Controllers';
@@ -57,7 +58,7 @@ class AuthRouteMethods
      *
      * @return callable
      */
-    public function resetPassword()
+    public function resetPassword(): callable|Closure
     {
         return function () {
             $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -72,7 +73,7 @@ class AuthRouteMethods
      *
      * @return callable
      */
-    public function confirmPassword()
+    public function confirmPassword(): callable|Closure
     {
         return function () {
             $this->get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
@@ -83,9 +84,9 @@ class AuthRouteMethods
     /**
      * Register the typical email verification routes for an application.
      *
-     * @return callable
+     * @return callable|Closure
      */
-    public function emailVerification()
+    public function emailVerification(): callable|Closure
     {
         return function () {
             $this->get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');

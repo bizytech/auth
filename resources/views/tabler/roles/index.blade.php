@@ -1,9 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
     <div class="">
 
-        @include("bizytech::roles.add_role_modal")
+        @include("nisimpo::roles.add_role_modal")
 
         <!-- Main Wrapper -->
         <div id="wrapper">
