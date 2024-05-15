@@ -8,6 +8,6 @@ class AuthorizationService extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Bizytech\Auth\Services\AuthorizationService::class;
+        return \BizyTech\Auth\Services\AuthorizationService::class;
     }
 }
