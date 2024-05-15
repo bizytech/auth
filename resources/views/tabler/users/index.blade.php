@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="">
-        @include("nisimpo::".config('nisimpo_auth.theme').".users.add_user_modal")
+        @include("bizytech::".config('nisimpo_auth.theme').".users.add_user_modal")
         <div class="row align-item-center">
             <div class="col-sm-6">
                 <h1 class="p-0 m-0">Users</h1>

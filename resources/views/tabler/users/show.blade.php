@@ -1,86 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="">
-        <!-- Main Wrapper -->
-        <div id="wrapper">
-
-            <div class="content">
-                <div class="container">
-                   <div class="row">
-                       <div class="col-sm-3">
-                           <div class="col">
-                              <div class="hpanel">
-                                  <div class="panel-body">
-                                      <div style="display: flex; flex-direction: column; align-items: center;">
-                                          <img src="{{ asset('vendor/homer/images/profile.jpg') }}" class="img-circle" alt="logo">
-                                          <h3 class="p-0 m-0 text-center">{{ $user->full_name }}</h3>
-                                          <h4 class="p-0 m-0 text-success">{{ $user->is_active ? "ACTIVE" : "INACTIVE" }} </h4>
-                                          <div class="row mt-3">
-                                              <a class="btn btn-primary" href="{{ $user->id }}">Edit</a>
-                                              <a class="btn btn-danger" href="{{ $user->id }}">Delete</a>
-                                          </div>
-                                      </div>
-                                  </div>
+    <div class="container">
+       <div class="row">
+           <div class="col-sm-3">
+               <div class="col">
+                  <div class="card">
+                      <div class="card-body">
+                          <div style="display: flex; flex-direction: column; align-items: center;">
+                              <img src="{{ asset('vendor/homer/images/profile.jpg') }}" class="img-circle" alt="logo">
+                              <h3 class="p-0 m-0 text-center">{{ $user->full_name }}</h3>
+                              <h4 class="p-0 m-0 text-success">{{ $user->is_active ? "ACTIVE" : "INACTIVE" }} </h4>
+                              <div class="row mt-3">
+                                  <a class="btn btn-primary" href="{{ $user->id }}">Edit</a>
+                                  <a class="btn btn-danger" href="{{ $user->id }}">Delete</a>
                               </div>
-                           </div>
-                       </div>
-                       <div class="col-sm-9">
-                           <div class="hpanel">
-                               <div class="panel-body">
-                                   <div class="panel-title">ASSIGN ROLE</div>
-                                   <div class="row" style="margin-top: 15px;">
-                                       @if(count($roles) > 0)
-                                           @foreach($roles as $role)
-                                               <div class="col-sm-4">
-                                                   <div class="a_role" data-role="{{ $role->name }}">
-                                                       <input type="checkbox" {{ $user->hasRole($role->name) ? 'checked' : '' }} class="form-check m-r-n-sm"/>
-                                                       <div class="nav-divider"></div>
-                                                       <span>{{ $role->name }}</span>
-                                                   </div>
-                                               </div>
-                                           @endforeach
-                                       @endif
+                          </div>
+                      </div>
+                  </div>
+               </div>
+           </div>
+           <div class="col-sm-9">
+               <div class="card">
+                   <div class="card-header">ASSIGN ROLE</div>
+                   <div class="card-body">
+                       <div class="row">
+                           @if(count($roles) > 0)
+                               @foreach($roles as $role)
+                                   <div class="col-sm-4">
+                                       <div class="a_role" data-role="{{ $role->name }}">
+                                           <input type="checkbox" {{ $user->hasRole($role->name) ? 'checked' : '' }} class="form-check m-r-n-sm"/>
+                                           <div class="nav-divider"></div>
+                                           <span>{{ $role->name }}</span>
+                                       </div>
                                    </div>
-                               </div>
-                           </div>
-                           <div class="hpanel">
-                              <div class="panel-body">
-                                  <div class="panel-title">ASSIGN PERMISSIONS</div>
-
-                                  <div class="row" style="margin-top: 15px;">
-                                      @if( $modules_permissions != null)
-                                          @if(count($modules_permissions) > 0)
-                                              @foreach($modules_permissions as $permission)
-                                                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                                      <div class="permission_title margin-bottom" data-id="{{ $permission->id }}">
-                                                          <input type="checkbox" class="form-check m-r-n-md" disabled/>
-                                                          <span style="margin-left: 2px;;">{{ $permission->name }}</span>
-                                                      </div>
-                                                      @if(count($permission->permissions) > 0)
-                                                          @foreach($permission->permissions as $perm)
-                                                              <div class="a_permission" data-permission="{{ $perm->name }}">
-                                                                  <input type="checkbox" class="form-check m-r-n-md" {{ $user->hasPermissionTo($perm->name) ? 'checked' : '' }}/>
-                                                                  <span style="margin-left: 2px;;">{{ $perm->name }}</span>
-                                                              </div>
-                                                          @endforeach
-                                                      @endif
-                                                      <hr/>
+                               @endforeach
+                           @endif
+                       </div>
+                   </div>
+               </div>
+               <div class="card">
+                   <div class="card-header">ASSIGN PERMISSIONS</div>
+                   <div class="card-body">
+                       <div class="row">
+                          @if( $modules_permissions != null)
+                              @if(count($modules_permissions) > 0)
+                                  @foreach($modules_permissions as $permission)
+                                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                          <div class="permission_title margin-bottom" data-id="{{ $permission->id }}">
+                                              <input type="checkbox" class="form-check m-r-n-md" disabled/>
+                                              <span style="margin-left: 2px;;">{{ $permission->name }}</span>
+                                          </div>
+                                          @if(count($permission->permissions) > 0)
+                                              @foreach($permission->permissions as $perm)
+                                                  <div class="a_permission" data-permission="{{ $perm->name }}">
+                                                      <input type="checkbox" class="form-check m-r-n-md" {{ $user->hasPermissionTo($perm->name) ? 'checked' : '' }}/>
+                                                      <span style="margin-left: 2px;;">{{ $perm->name }}</span>
                                                   </div>
                                               @endforeach
                                           @endif
-                                      @endif
-                                  </div>
-
-                              </div>
-                          </div>
+                                          <hr/>
+                                      </div>
+                                  @endforeach
+                              @endif
+                          @endif
                        </div>
                    </div>
-                </div>
-            </div>
-
-        </div>
-
+              </div>
+           </div>
+       </div>
     </div>
 @endsection
 
