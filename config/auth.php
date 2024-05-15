@@ -62,7 +62,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => \Nisimpo\Auth\Models\User::class,
+            'model' => \Bizytech\Auth\Models\User::class,
         ],
 
         // 'users' => [
