@@ -1,8 +1,8 @@
-# Nisimpo Auth Package
+# Bizytech Auth Package
 
-<a href="https://packagist.org/packages/nisimpo/auth"><img src="https://img.shields.io/packagist/dt/nisimpo/auth" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/nisimpo/auth"><img src="https://img.shields.io/packagist/v/nisimpo/auth" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/nisimpo/auth"><img src="https://img.shields.io/packagist/l/nisimpo/auth" alt="License"></a>
+<a href="https://packagist.org/packages/nisimpo/auth"><img src="https://img.shields.io/packagist/dt/bizytech/auth" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/nisimpo/auth"><img src="https://img.shields.io/packagist/v/bizytech/auth" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/nisimpo/auth"><img src="https://img.shields.io/packagist/l/bizytech/auth" alt="License"></a>
 
 ## Introduction
 
@@ -28,10 +28,10 @@ Only the latest major version of Laravel UI receives bug fixes. The table below 
 The Bootstrap and Vue scaffolding provided by Nisimpo is located in the `nisimpo/auth` Composer package, which may be installed in your new laravel app using Composer:
 
 ```bash
-composer require nisimpo/auth:dev-main
+composer require bizytech/auth
 ```
 
-Once the `nisimpo/auth` package has been installed, you may install the frontend scaffolding using the `ui` Artisan command:
+Once the `bizytech/auth` package has been installed, you may install the frontend scaffolding using the `ui` Artisan command:
 
 ```bash
 // Generate login / registration scaffolding...
