@@ -2,7 +2,7 @@
 
 namespace Illuminate\Foundation\Auth;
 
-use Nisimpo\Auth\Facades\AuthorizationService;
+use Bizytech\Auth\Facades\AuthorizationService;
 
 trait AuthorizeUserTrait
 {
