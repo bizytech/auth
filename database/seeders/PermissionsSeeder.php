@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Nisimpo\Auth\Models\Module;
+use BizyTech\Auth\Models\Module;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Log;

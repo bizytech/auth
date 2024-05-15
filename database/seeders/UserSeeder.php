@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void {
-        $user = \Nisimpo\Auth\Models\User::query()->updateOrCreate(
+        $user = \Bizytech\Auth\Models\User::query()->updateOrCreate(
             [
                 'name' => 'Test User',
                 'full_name' => 'Test User',
