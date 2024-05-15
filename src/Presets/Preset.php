@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Presets;
+namespace BizyTech\Auth\Presets;
 
 use Illuminate\Filesystem\Filesystem;
 

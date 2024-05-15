@@ -3,7 +3,7 @@
 @section('content')
     <div class="">
 
-        @include("nisimpo::groups.add_group_modal")
+        @include("bizytech::groups.add_group_modal")
 
         <!-- Main Wrapper -->
         <div id="wrapper">

@@ -3,7 +3,7 @@
 @section('content')
     <div class="">
 
-        @include("nisimpo::roles.add_role_modal")
+        @include("bizytech::roles.add_role_modal")
 
         <!-- Main Wrapper -->
         <div id="wrapper">

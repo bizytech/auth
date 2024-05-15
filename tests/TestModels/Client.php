@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Tests\TestModels;
+namespace BizyTech\Auth\Tests\TestModels;
 
 class Client
 {

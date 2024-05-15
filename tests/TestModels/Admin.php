@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Tests\TestModels;
+namespace BizyTech\Auth\Tests\TestModels;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Nisimpo\Auth\Tests;
+namespace BizyTech\Auth\Tests;
 class Test extends TestCase
 {
 

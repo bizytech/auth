@@ -1,5 +1,5 @@
 <?php
-namespace Nisimpo\Auth\Models;
+namespace BizyTech\Auth\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphTo;

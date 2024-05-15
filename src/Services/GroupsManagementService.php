@@ -1,9 +1,9 @@
 <?php
 
-namespace Nisimpo\Auth\Services;
+namespace BizyTech\Auth\Services;
 
-use Nisimpo\Auth\Models\Module;
-use Nisimpo\Auth\Models\User;
+use BizyTech\Auth\Models\Module;
+use BizyTech\Auth\Models\User;
 
 class GroupsManagementService {
 

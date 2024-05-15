@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="">
-        @include("nisimpo::users.add_user_modal")
+        @include("bizytech::users.add_user_modal")
 
         <!-- Main Wrapper -->
         <div id="wrapper">

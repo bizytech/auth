@@ -1,7 +1,7 @@
 {
-    "name": "nisimpo/auth",
-    "description": "Nisimpo UI utilities and presets.",
-    "keywords": ["nisimpo", "auth"],
+    "name": "bizytech/auth",
+    "description": "BizyTech Auth UI utilities and presets.",
+    "keywords": ["bizytech", "auth"],
     "license": "MIT",
     "authors": [
         {
@@ -24,8 +24,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Nisimpo\\Auth\\": "src/",
-            "Nisimpo\\Auth\\Tests\\": "tests/",
+            "BizyTech\\Auth\\": "src/",
+            "BizyTech\\Auth\\Tests\\": "tests/",
             "Illuminate\\Foundation\\Auth\\": "auth-backend/"
         }
     },
@@ -38,8 +38,8 @@
         },
         "laravel": {
             "providers": [
-                "Nisimpo\\Auth\\AuthUIServiceProvider",
-                "Nisimpo\\Auth\\AuthRouteServiceProvider"
+                "BizyTech\\Auth\\AuthUIServiceProvider",
+                "BizyTech\\Auth\\AuthRouteServiceProvider"
             ]
         }
     },

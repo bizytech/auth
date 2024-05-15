@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth;
+namespace BizyTech\Auth;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;

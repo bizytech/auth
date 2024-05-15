@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Tests\AuthBackend;
+namespace BizyTech\Auth\Tests\AuthBackend;
 
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Auth\User;

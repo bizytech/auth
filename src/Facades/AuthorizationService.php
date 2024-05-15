@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Facades;
+namespace BizyTech\Auth\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

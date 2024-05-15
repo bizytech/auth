@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Http\Controllers;
+namespace BizyTech\Auth\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;

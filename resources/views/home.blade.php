@@ -4,11 +4,11 @@
   <div class="">
 
       <!-- Header -->
-       @include("nisimpo::common.navbar")
+       @include("bizytech::common.navbar")
 
       <!-- Navigation -->
 
-       @include("nisimpo::common.sidebar")
+       @include("bizytech::common.sidebar")
 
       <!-- Main Wrapper -->
       <div id="wrapper">

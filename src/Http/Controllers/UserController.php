@@ -1,22 +1,20 @@
 <?php
 
-namespace Nisimpo\Auth\Http\Controllers;
+namespace BizyTech\Auth\Http\Controllers;
 
-use App\Models\Member;
-use Nisimpo\Auth\Models\Module;
+use BizyTech\Auth\Models\Module;
 use http\Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Auth\AuthorizeUserTrait;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Nisimpo\Auth\Models\User;
-use Nisimpo\Auth\Services\AuthorizationService;
-use Nisimpo\Auth\Services\UserManagementService;
+use BizyTech\Auth\Models\User;
+use BizyTech\Auth\Services\AuthorizationService;
+use BizyTech\Auth\Services\UserManagementService;
 use Spatie\Permission\Exceptions\RoleDoesNotExist;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
-use Illuminate\Support\Facades\Log;
+
 
 
 class UserController extends Controller
@@ -25,17 +23,17 @@ class UserController extends Controller
 
     /**
      * Create a new controller instance.
-     * 
+     *
      * @return void
      */
-    
+
      public function __construct(protected AuthorizationService $authorizationService,
         protected UserManagementService $userManagementService) {
         $this->middleware('auth');
     }
 
 
-    public function users(): View 
+    public function users(): View
     {
         $users = $this->userManagementService->findAllUsers();
         return view('nisimpo::users.index',compact('users'));
@@ -49,7 +47,7 @@ class UserController extends Controller
     }
 
 
-    public function delete($id) 
+    public function delete($id)
     {
       try{
         $user = $this->userManagementService->deleteUser($id);
@@ -89,7 +87,7 @@ class UserController extends Controller
     }
 
 
-    public function index() 
+    public function index()
     {
         $users = $this->userManagementService->findAllUsers();
         if (\request()->ajax()){
@@ -99,7 +97,7 @@ class UserController extends Controller
     }
 
 
-    public function roles() 
+    public function roles()
     {
         $roles = $this->findAllRoles();
         if (\request()->ajax()){
@@ -108,7 +106,7 @@ class UserController extends Controller
         return view('nisimpo::roles.index', compact('roles'));
     }
 
-    
+
 
     public function updatePermission(Request $request , string $id)
     {
@@ -159,7 +157,7 @@ class UserController extends Controller
           return null;
     }
 
-    
+
     public function deletePermission($id) {
         try{
             $role = $this->userManagementService->deletePermission($id);
@@ -171,7 +169,7 @@ class UserController extends Controller
           }
           return null;
     }
-    
+
     public function editRole($id) {
         return $this->userManagementService->findRole($id);
     }
@@ -298,7 +296,7 @@ class UserController extends Controller
         return view('nisimpo::roles.show',compact("role","roles","modules_permissions"));
     }
 
-    
+
     public function createUser(Request $request)
     {
 
@@ -326,7 +324,7 @@ class UserController extends Controller
     }
 
 
-    public function successResponse() 
+    public function successResponse()
     {
         return \response()->json([
             "status" => true,
@@ -335,7 +333,7 @@ class UserController extends Controller
     }
 
 
-    public function failedResponse($error) 
+    public function failedResponse($error)
     {
         return \response()->json([
             "status" => false,

@@ -1,11 +1,11 @@
 <?php
 
-namespace Nisimpo\Auth\Http\Controllers;
+namespace BizyTech\Auth\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthorizeUserTrait;
-use Nisimpo\Auth\Services\AuthorizationService;
-use Nisimpo\Auth\Services\GroupsManagementService;
+use BizyTech\Auth\Services\AuthorizationService;
+use BizyTech\Auth\Services\GroupsManagementService;
 
 class GroupsManagementController extends Controller {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Tests;
+namespace BizyTech\Auth\Tests;
 
 use Closure;
 use Illuminate\Cache\DatabaseStore;
@@ -11,9 +11,9 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
-use Nisimpo\Auth\Tests\TestModels\Admin;
-use Nisimpo\Auth\Tests\TestModels\Client;
-use Nisimpo\Auth\Tests\TestModels\User;
+use BizyTech\Auth\Tests\TestModels\Admin;
+use BizyTech\Auth\Tests\TestModels\Client;
+use BizyTech\Auth\Tests\TestModels\User;
 use Spatie\Permission\Exceptions\UnauthorizedException;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;

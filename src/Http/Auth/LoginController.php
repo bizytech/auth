@@ -1,6 +1,6 @@
 <?php
 
-namespace Nisimpo\Auth\Http\Auth;
+namespace BizyTech\Auth\Http\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Routing\Controller;
 

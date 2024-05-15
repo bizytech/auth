@@ -1,10 +1,10 @@
 <?php
 
-namespace Nisimpo\Auth\Services;
+namespace BizyTech\Auth\Services;
 
 use Database\Seeders\PermissionsSeeder;
 use Illuminate\Database\Eloquent\Collection;
-use Nisimpo\Auth\Models\User;
+use BizyTech\Auth\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
