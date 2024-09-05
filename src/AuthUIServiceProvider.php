@@ -78,5 +78,9 @@ class AuthUIServiceProvider extends ServiceProvider
             __DIR__.'/../config' => base_path('config'),
            // __DIR__.'/../database/seeders/' => database_path('seeders'),
         ], 'bizytech');
+
+        $this->publishes([
+            __DIR__.'/../resources/views/auth' => base_path('resources/views/auth'),
+        ], 'bizytech-auth');
     }
 }
